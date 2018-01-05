@@ -1,28 +1,29 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Users</title>
+    <title>DataBase</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Here are your users:</h1>
-
-    {% if users%}
-
-    <ol>
-      {% for person in users %}
-      <li>User Info</li>
-        <ul>
-          <li>First Name: {{person.first_name}}</li>
-          <li>Last Name: {{person.last_name}}</li>
-          <li>Email: {{person.email}}</li>
-        </ul>
+    <div class="container">
+      {% if data_rec %}
+      <table class="table">
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+        </thead>
+        {% for data in data_rec %}
+        <tr>
+          <td>{{data.first_name}}</td>
+          <td>{{data.last_name}}</td>
+          <td>{{data.email}}</td>
+        </tr>
         {% endfor %}
-    </ol>
-
-
-
-
-    {% endif %}
+      </table>
+      {% endif %}
+    </div>
   </body>
 </html>

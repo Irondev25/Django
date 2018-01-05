@@ -7,13 +7,12 @@ from appTwo.forms import ModelFormUser
 def index(request):
     return render(request,'apptwo/index.html')
 
+def database(request):
+    data_list = User.objects.all()
+    return render(request,'appTwo/users.html',{'data_rec':data_list})
+
+
 def users(request):
-
-    user_list = User.objects.order_by('first_name')
-    user_dict = {"users":user_list}
-    return render(request,'apptwo/users.html',context=user_dict)
-
-def form_page(request):
     form = ModelFormUser()
 
     if request.method == "POST":

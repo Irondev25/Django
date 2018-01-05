@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Database</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      {% if data_rec %}
+      <table class="table">
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+        </thead>
+        {% for data in data_rec %}
+        <tr>
+          <td>{{data.first_name}}</td>
+          <td>{{data.last_name}}</td>
+          <td>{{data.email}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <h2>data Not found!!</h2>
+      {% endif %}
+    </div>
+  </body>
+</html>

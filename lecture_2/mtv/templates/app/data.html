@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Database</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
+  </head>
+  <body>
+    <h1>This is a user database.</h1>
+
+    <div class="djangotwo">
+      {% if data_record %}
+        <table>
+          <thead>
+            <th>First_Name</th>
+            <th>Last_Name</th>
+            <th>Email</th>
+          </thead>
+
+          {% for dat in data_record %}
+          <tr>
+            <td>{{ dat.first_name }}</td>
+            <td>{{ dat.last_name }}</td>
+            <td>{{ dat.email }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% else %}
+          <p>NO ACCESS RECORD FILES FOUND!</p>
+        {% endif %}
+
+    </div>
+
+  </body>
+</html>

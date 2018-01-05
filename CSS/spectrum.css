@@ -1,0 +1,34 @@
+#h3{
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+}
+
+table{
+  margin: auto;
+}
+
+td{
+  height: 200px;
+  width: 150px;
+  border: 6px solid white;
+}
+
+#id1{
+  background: #E1D89F;
+}
+
+#id2{
+  background: #CD8B76;
+}
+
+#id3{
+  background: #C45BAA;
+}
+
+#id4{
+  background: #7D387D;
+}
+
+#id5{
+  background: #27474E;
+}

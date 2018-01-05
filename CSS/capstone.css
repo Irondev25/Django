@@ -1,0 +1,78 @@
+body{
+  background: #7D387D;
+  padding-top: 20px;
+}
+
+
+.div1{
+  align: center;
+  margin: auto;
+  background: #C45BAA;
+  padding: 10px;
+  border: 40px solid #E1D89F;
+  border-top: 0px;
+}
+
+h1{
+  text-align: center;
+  font-family: 'Bree Serif', serif;
+}
+
+
+h2{
+  text-align: center;
+}
+
+p{
+  margin: auto;
+  text-align: center;
+  font-family: 'Asap', sans-serif;
+  width: 70%;
+}
+
+form{
+  text-align: center;
+}
+
+#heading_two{
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+#signup{
+  font-family: 'Bree Serif', serif;
+}
+
+
+#first_name{
+  font-family: 'Bree Serif', serif;
+}
+
+#last_name{
+  font-family: 'Bree Serif', serif;
+}
+
+#email{
+  font-family: 'Bree Serif', serif;
+}
+
+
+#input_email{
+  font-family: 'Bree Serif', serif;
+}
+
+button{
+  width: 100px;
+  height: 50px;
+}
+
+
+#btn{
+  font-family: 'Bree Serif', serif;
+  border-style: solid;
+  margin-top: 20px;
+  border: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

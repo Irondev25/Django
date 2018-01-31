@@ -19,6 +19,15 @@
             <li class="active">
                 <a href="{% url 'basic_app:register' %}">Register</a>
             </li>
+            {% if user.is_authenticated %}
+            <li class="active">
+                <a href="{% url 'logout' %}">Logut</a>
+            </li>
+            {% else %}
+            <li class="active">
+                <a href="{% url 'basic_app:user_login' %}">Login</a>
+            </li>
+            {% endif %}
         </ul>
     </nav>
     

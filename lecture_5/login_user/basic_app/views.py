@@ -62,7 +62,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect(reverse('https://www.google.com'))
+                return HttpResponseRedirect(reverse('special'))
 
             else:
                 return HttpResponse("Account Not Active")

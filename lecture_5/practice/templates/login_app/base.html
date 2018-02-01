@@ -19,8 +19,13 @@
                 <a href=" {% url 'admin:index' %} ">Admin</a>
             </li>
             <li>
-                <a href="#">Registration</a>
+                <a href="{% url 'login_app:registration' %}">Registration</a>
             </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'login_app:registration' %}">Registration</a>
+            </li>
+            {% endif %}
         </ul>
     </nav>
     <div class="container">

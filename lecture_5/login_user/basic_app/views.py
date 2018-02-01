@@ -37,7 +37,7 @@ def register_view(request):
             profile.user = user
 
             if 'profile_pic' in request.FILES:
-                profile.profile_pic = request.FILES['profile_pic']
+                profile['profile_pic'] = request.FILES['profile_pic']
             
             profile.save()
 

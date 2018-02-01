@@ -12,14 +12,14 @@
 
 <body>
 
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
         <a class="navbar-brand" href="{% url 'index' %}">Djangotle</a>
         <ul class="nav navbar-nav">
             <li class="active">
                 <a href=" {% url 'admin:index' %} ">Admin</a>
             </li>
             <li>
-                <a href="#">Registration</a>
+                <a href="{% url 'login_app:registration' %}">Registration</a>
             </li>
         </ul>
     </nav>

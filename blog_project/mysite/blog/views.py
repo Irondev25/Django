@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
-from .models import Post
+from .models import Post, Comment
 from blog.forms import PostForm, CommentForm
 from django.utils import timezone
 from django.urls import reverse_lazy
@@ -56,6 +56,13 @@ class DraftListView(LoginRequiredMixin, generic.ListView):
         return Post.objects.filter(published_date__isnull=True)/
         .order_by('created_date')
 
+
+@login_required
+def post_publish(request, pk):
+    post = get_object_or_404(request, pk=pk)
+    post.publish
+    return redirect('post_detail', pk=pk)
+
 ################################################################
 ################################################################
 ################################################################
@@ -75,3 +82,19 @@ def add_comment_to_post(request,pk):
     else:
         form = CommentForm()
     return render(request, 'blog/comment_form.html',{'form':form})
+
+@login_required
+def comment_approve(request,pk):
+    comment = get_object_or_404(Comment,pk=pk)
+    comment.approve()
+    return redirect('post_detail',pk=comment.post.pk)
+
+
+
+
+@login_required
+def comment_remove(request,pk):
+    comment = get_object_or_404(Comment,pk=pk)
+    post_pk = comment.post.pk
+    comment.delete()
+    return redirect('post_detail',pk=post_pk)

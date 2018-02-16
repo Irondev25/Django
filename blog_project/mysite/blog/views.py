@@ -60,7 +60,7 @@ class DraftListView(LoginRequiredMixin, generic.ListView):
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
-    return redirect('post_detail', pk=pk)
+    return redirect('blog:post_detail', pk=pk)
 
 ################################################################
 ################################################################
@@ -77,7 +77,7 @@ def add_comment_to_post(request,pk):
             comment = form.save(commit=False)
             comment.post = post
             comment.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('blog:post_detail', pk=post.pk)
     else:
         form = CommentForm()
     return render(request, 'blog/comment_form.html',{'form':form})
@@ -86,7 +86,7 @@ def add_comment_to_post(request,pk):
 def comment_approve(request,pk):
     comment = get_object_or_404(Comment,pk=pk)
     comment.approve()
-    return redirect('post_detail', pk=comment.post.pk)
+    return redirect('blog:post_detail', pk=comment.post.pk)
 
 
 
@@ -96,4 +96,4 @@ def comment_remove(request,pk):
     comment = get_object_or_404(Comment,pk=pk)
     post_pk = comment.post.pk
     comment.delete()
-    return redirect('post_detail',pk=post_pk)
+    return redirect('blog:post_detail',pk=post_pk)
